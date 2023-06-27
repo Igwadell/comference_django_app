@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .speaker {
+        margin-bottom: 30px;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      .speaker h2 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      .speaker p {
+        margin-top: 10px;
+        color: #666;
+      }
+      .speaker-info {
+        margin-bottom: 20px;
+      }
+      .speaker-info h2 {
+        color: #333;
+      }
+      .speaker-info p {
+        color: #666;
+      }
+      .profile-picture {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+}
+
+      .Profile_picture_img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="speaker-info">
+
+      <div class="profile-picture">
+        <img class="Profile_picture_img" src="{{speaker.Profile_picture.url}}" alt="Profile_picture">
+      </div>
+      
+      <h2>{{ speaker.name }}</h2>
+      <p><strong>Bio:</strong> {{ speaker.bio }}</p>
+      <p><strong>Other Information:</strong> {{ speaker.other_info }}</p>
+      <p><strong>Area of experience:</strong> {{ speaker.area_of_experience }}</p>
+    </div>
+
+    <a href="{% url 'speakers' %}">Speakers</a>
+
+  </body>
+</html>
