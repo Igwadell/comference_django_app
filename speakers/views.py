@@ -185,9 +185,9 @@ def createSpeakers(request):
         return render(request, "createSpeaker.html", {"categories": categories})
 
 
-def viewSpeaker(request, id):
+def viewspeaker(request, id):
     speaker = Speaker.objects.get(id=id)
-    return render(request, "viewSpeaker.html", {"speaker": speaker})
+    return render(request, "viewspeaker.html", {"speaker": speaker})
 
 
 def speakerUpdate(request, id):

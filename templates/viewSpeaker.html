@@ -42,9 +42,9 @@
         height: 200px;
         border-radius: 50%;
         overflow: hidden;
-}
+      }
 
-      .Profile_picture_img{
+      .Profile_picture_img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -53,11 +53,9 @@
   </head>
   <body>
     <div class="speaker-info">
-
       <div class="profile-picture">
-        <img class="Profile_picture_img" src="{{speaker.Profile_picture.url}}" alt="Profile_picture">
+        <img class="Profile_picture_img" src="{{ speaker.Profile_picture.url }}" alt="Profile_picture">
       </div>
-      
       <h2>{{ speaker.name }}</h2>
       <p><strong>Bio:</strong> {{ speaker.bio }}</p>
       <p><strong>Other Information:</strong> {{ speaker.other_info }}</p>
@@ -65,6 +63,6 @@
     </div>
 
     <a href="{% url 'speakers' %}">Speakers</a>
-
+    <a href="{% url 'viewspeaker' id=speaker.id %}">More</a>
   </body>
 </html>
