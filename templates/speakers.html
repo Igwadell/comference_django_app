@@ -34,7 +34,7 @@
         height: 200px;
         border-radius: 50%;
         overflow: hidden;
-}
+      }
 
       .Profile_picture_img{
         width: 100%;
@@ -42,20 +42,22 @@
         object-fit: cover;
       }
 
+
+
     </style>
   </head>
   <body>
     <h1>List of Speakers</h1>
 
     {% for speaker in speakers %}
-    <div class="speaker">
-      <div class="profile-picture">
-        <img class="Profile_picture_img" src="{{speaker.Profile_picture.url}}" alt="Profile_picture">
-      </div>
-      <h2>{{ speaker.name }}</h2>
-      <p><strong>Bio:</strong> {{ speaker.bio }}</p>
-      <p><strong>Area of experience:</strong> {{ speaker.area_of_experience }}</p>
-    </div>
+     <div class="speaker">
+        <div class="profile-picture">
+          <img class="Profile_picture_img" src="{{speaker.Profile_picture.url}}" alt="Profile_picture">
+        </div>
+        <h2>{{ speaker.name }}</h2>
+        <p><strong>Bio:</strong> {{ speaker.bio }}</p>
+        <p><strong>Area of experience:</strong> {{ speaker.area_of_experience }} <a class="more" href="#">more</a></p>
+     </div>
     {% endfor %}
   </body>
 </html>

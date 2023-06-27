@@ -5,26 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script>     -->
+    <title>Home</title>
 </head>
 <body>
     <h1>Home Page</h1>
     <br>
-    <a href="{% url 'about' %}">About us</a>
-    <a href="{% url 'about' %}">Speaker</a>
-    <hr>
-
-    
-    <div>
-        <a href="#">
-        {% for speaker in speakers %}
-         <h2>MR. {{speaker.name}}</h2>
-        {% endfor %}
-        </a>
-
+    <div class="space-x-5">
+       <a href="{% url 'about' %}">About us</a>
+           <a href="#" class="px-6 py-1 text-lg font-semibold bg-yellow-500 text-white rounded-lg hover:bg-yellow-300">New Speaker</a> 
+           <a href="#" class="px-6 py-1 text-lg font-semibold bg-gray-500 text-white rounded-lg hover:bg-gray-700">View speakers</a>
     </div>
 
-
+    <hr>
 
     <h2>{{ data }}</h2>
     {% for y in data %}
