@@ -1,0 +1,56 @@
+<!-- events/participant_event_count.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Participant Event Count</title>
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .participant-list {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .participant-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .participant-item h2 {
+            font-size: 18px;
+            color: #333;
+            margin-top: 0;
+        }
+        .participant-item p {
+            margin: 0;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Participant Event Count</h1>
+    <div class="participant-list">
+        {% if participant_event_counts %}
+            {% for participant in participant_event_counts %}
+                <div class="participant-item">
+                    <h2>{{ participant.name }}</h2>
+                    <p><strong>Event Count:</strong> {{ participant.event_count }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No participants available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

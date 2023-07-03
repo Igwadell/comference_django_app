@@ -8,7 +8,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('conferences', '0001_initial'),
+        ('events', '0001_initial'),
     ]
 
     operations = [
@@ -20,15 +20,15 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.AddField(
-            model_name='conference',
+            model_name='event',
             name='date',
             field=models.DateTimeField(default=django.utils.timezone.now),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='conference',
+            model_name='event',
             name='category',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='conferences.category'),
+            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='events.category'),
             preserve_default=False,
         ),
     ]

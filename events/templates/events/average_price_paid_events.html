@@ -1,0 +1,41 @@
+<!-- events/average_price_paid_events.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Average Price of Paid Events</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .average-price {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .average-price h2 {
+            font-size: 18px;
+            color: #333;
+            margin-top: 0;
+        }
+        .average-price p {
+            margin: 0;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Average Price of Paid Events</h1>
+    <div class="average-price">
+        <h2>Average Price: ${{ average_price.average_price }}</h2>
+    </div>
+</body>
+</html>

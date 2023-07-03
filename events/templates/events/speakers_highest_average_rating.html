@@ -1,0 +1,53 @@
+<!-- events/speakers_highest_average_rating.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speakers with Highest Average Rating</title>
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .speakers-list {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .speaker {
+            margin-bottom: 10px;
+        }
+        .speaker h3 {
+            font-size: 16px;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .speaker p {
+            margin: 0;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speakers with Highest Average Rating</h1>
+    <div class="speakers-list">
+        <h2>Top Speakers</h2>
+        {% for speaker in speakers %}
+        <div class="speaker">
+            <h3>{{ speaker.name }}</h3>
+            <p>Average Rating: {{ speaker.average_rating }}</p>
+        </div>
+        {% empty %}
+        <p>No speakers found.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Participants Attended All Events</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Participants Attended All Events</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for participant in participants_attended_all %}
+            <tr>
+                <td>{{ participant.name }}</td>
+                <td>{{ participant.email }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">No participants have attended all events.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

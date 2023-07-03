@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('speakers', '0003_alter_speaker_contact_info'),
-        ('conferences', '0003_alter_category_options'),
+        ('events', '0003_alter_category_options'),
     ]
 
     operations = [
@@ -21,17 +21,17 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.RenameField(
-            model_name='conference',
+            model_name='event',
             old_name='title',
             new_name='tittle',
         ),
         migrations.AddField(
-            model_name='conference',
+            model_name='event',
             name='theme',
             field=models.CharField(blank=True, max_length=255, null=True),
         ),
         migrations.AddField(
-            model_name='conference',
+            model_name='event',
             name='venue',
             field=models.CharField(blank=True, max_length=255, null=True),
         ),
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('time_slot', models.DateTimeField()),
                 ('session_duration', models.DurationField()),
-                ('conference', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='schedules', to='conferences.conference')),
+                ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='schedules', to='events.event')),
                 ('speaker', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='speakers.speaker')),
             ],
         ),
@@ -52,7 +52,7 @@ class Migration(migrations.Migration):
                 ('attendance', models.PositiveIntegerField()),
                 ('session_popularity', models.PositiveIntegerField()),
                 ('speaker_ratings', models.PositiveIntegerField()),
-                ('conference', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reports', to='conferences.conference')),
+                ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reports', to='events.event')),
             ],
         ),
         migrations.CreateModel(
@@ -60,18 +60,18 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('reminder_time', models.DateTimeField()),
-                ('attendee', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reminders', to='conferences.attendee')),
-                ('session', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='conferences.schedule')),
+                ('attendee', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reminders', to='events.attendee')),
+                ('session', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='events.schedule')),
             ],
         ),
         migrations.AddField(
             model_name='attendee',
-            name='conference',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='attendees', to='conferences.conference'),
+            name='event',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='attendees', to='events.event'),
         ),
         migrations.AddField(
             model_name='attendee',
             name='sessions',
-            field=models.ManyToManyField(to='conferences.schedule'),
+            field=models.ManyToManyField(to='events.schedule'),
         ),
     ]

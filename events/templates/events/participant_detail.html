@@ -1,0 +1,63 @@
+<!-- events/participant_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Participant Details</title>
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .participant-details {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .participant-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .participant-email {
+            color: #777;
+        }
+        .participant-event {
+            margin-top: 20px;
+        }
+        .participant-event h2 {
+            font-size: 18px;
+            color: #333;
+        }
+        .participant-event-details {
+            margin-top: 10px;
+        }
+        .participant-event-details p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Participant Details</h1>
+    <div class="participant-details">
+        <p class="participant-name">{{ participant.name }}</p>
+        <p class="participant-email">{{ participant.email }}</p>
+        <div class="participant-event">
+            <h2>Event Details</h2>
+            <div class="participant-event-details">
+                <p><strong>Event Title:</strong> {{ participant.Event.tittle }}</p>
+                <p><strong>Date:</strong> {{ participant.Event.date }}</p>
+                <p><strong>Venue:</strong> {{ participant.Event.venue }}</p>
+                <p><strong>Theme:</strong> {{ participant.Event.theme }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

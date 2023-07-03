@@ -49,6 +49,11 @@
         height: 100%;
         object-fit: cover;
       }
+      
+      .space-x-6 {
+        display: flex;
+        justify-content:center;
+      }
     </style>
   </head>
   <body>
@@ -61,8 +66,10 @@
       <p><strong>Other Information:</strong> {{ speaker.other_info }}</p>
       <p><strong>Area of experience:</strong> {{ speaker.area_of_experience }}</p>
     </div>
+    <div class="space-x-6">
+          <a href="{% url 'speakers' %}">Speakers</a>
+          <a href="{% url 'viewspeaker' id=speaker.id %}">More</a>
+    </div>
 
-    <a href="{% url 'speakers' %}">Speakers</a>
-    <a href="{% url 'viewspeaker' id=speaker.id %}">More</a>
   </body>
 </html>

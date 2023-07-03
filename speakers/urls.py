@@ -1,7 +1,7 @@
 from django.urls import path, re_path
 from . import views
 from .views import (
-    speakerList,
+    speaker_list,
     createSpeakers,
     viewspeaker,
     speakerUpdate,
@@ -10,13 +10,13 @@ from .views import (
 )
 
 urlpatterns = [
-    path("", speakerList),
+    path("", speaker_list),
     path("topic/", choosetopic),
     path("create/", createSpeakers),
     path("create/", createSpeakers),
     path("<int:id>/", viewspeaker),
     path("<int:id>/update/", speakerUpdate),
     path("<int:id>/delete/", speakerDelete),
-    path("speakers/", views.speakerList, name="speakers"),
+    path("speakers/", views.speaker_list, name="speakers"),
     path("speakers/<int:id>/", views.viewspeaker, name="viewspeaker"),
 ]

@@ -1,0 +1,58 @@
+<!-- events/event_schedules.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Schedules</title>
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .event-schedules {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .schedule-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .schedule-item h2 {
+            font-size: 18px;
+            color: #333;
+            margin-top: 0;
+        }
+        .schedule-item p {
+            margin: 0;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Schedules</h1>
+    <div class="event-schedules">
+        <h2>{{ event.tittle }}</h2>
+        {% if schedules %}
+            {% for schedule in schedules %}
+                <div class="schedule-item">
+                    <p><strong>Time Slot:</strong> {{ schedule.time_slot }}</p>
+                    <p><strong>Session Duration:</strong> {{ schedule.session_duration }}</p>
+                    <p><strong>Speaker:</strong> {{ schedule.speaker }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No schedules available for this event.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

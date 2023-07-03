@@ -1,0 +1,62 @@
+<!-- events/participants_multiple_locations.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Participants with Multiple Locations</title>
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .participant-list {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .participant {
+            margin-bottom: 10px;
+        }
+        .participant h3 {
+            font-size: 16px;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .participant ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .participant li {
+            margin-bottom: 5px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Participants with Multiple Locations</h1>
+    <div class="participant-list">
+        <h2>Participants with Multiple Locations</h2>
+        {% for participant in participants %}
+        <div class="participant">
+            <h3>{{ participant.name }}</h3>
+            <ul>
+                {% for location in participant.locations %}
+                <li>{{ location }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% empty %}
+        <p>No participants found with multiple locations.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

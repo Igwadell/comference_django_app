@@ -1,0 +1,63 @@
+<!-- events/participant_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Participant List</title>
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .participant-list {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .participant-list h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .participant-item {
+            margin-bottom: 20px;
+        }
+        .participant-name {
+            font-weight: bold;
+        }
+        .participant-email {
+            color: #777;
+        }
+        .participant-details {
+            margin-top: 10px;
+        }
+        .participant-details p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Participant List</h1>
+    <div class="participant-list">
+        <h2>Participants</h2>
+        {% for participant in participants %}
+        <div class="participant-item">
+            <p class="participant-name">{{ participant.name }}</p>
+            <p class="participant-email">{{ participant.email }}</p>
+            <div class="participant-details">
+                <p><strong>Event:</strong> {{ participant.Event.tittle }}</p>
+                <p><strong>Sessions:</strong> {{ participant.sessions.count }}</p>
+            </div>
+        </div>
+        {% empty %}
+        <p>No participants found.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

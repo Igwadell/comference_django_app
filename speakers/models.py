@@ -17,7 +17,7 @@ class Category(models.Model):
 class Speaker(models.Model):
     Category=models.ForeignKey(Category, related_name='speakers', on_delete=models.CASCADE)
     name =models.CharField(max_length= 255)
-    bio = models.TextField(blank=True, null=False)
+    Bio = models.TextField(blank=True, null=False)
     contact_info = models.CharField(max_length= 50)
     Profile_picture = models.ImageField(upload_to='speaker_images',blank=True, null=True)
     area_of_experience= models.CharField(max_length= 255)

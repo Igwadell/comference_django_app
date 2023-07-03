@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events Without Speakers</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            margin-top: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Events Without Speakers</h1>
+    {% if events %}
+        <ul>
+            {% for event in events %}
+                <li>{{ event.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events without speakers found.</p>
+    {% endif %}
+</body>
+</html>

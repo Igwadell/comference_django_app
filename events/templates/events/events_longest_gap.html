@@ -1,0 +1,53 @@
+<!-- events/events_longest_gap.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events with Longest Gap</title>
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .events-list {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .event {
+            margin-bottom: 10px;
+        }
+        .event h3 {
+            font-size: 16px;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .event p {
+            margin: 0;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Events with Longest Gap</h1>
+    <div class="events-list">
+        <h2>Events with the Longest Gap</h2>
+        {% for event in events %}
+        <div class="event">
+            <h3>{{ event.title }}</h3>
+            <p>Start Date: {{ event.start_date }}</p>
+            <p>End Date: {{ event.end_date }}</p>
+            <p>Gap: {{ event.gap }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

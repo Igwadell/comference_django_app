@@ -1,0 +1,62 @@
+<!-- events/speakers_different_topics.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speakers with Different Topics</title>
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .speaker-list {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .speaker {
+            margin-bottom: 10px;
+        }
+        .speaker h3 {
+            font-size: 16px;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .speaker ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .speaker li {
+            margin-bottom: 5px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speakers with Different Topics</h1>
+    <div class="speaker-list">
+        <h2>Speakers with Different Topics</h2>
+        {% for speaker in speakers %}
+        <div class="speaker">
+            <h3>{{ speaker.name }}</h3>
+            <ul>
+                {% for topic in speaker.topics %}
+                <li>{{ topic }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% empty %}
+        <p>No speakers found with different topics.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

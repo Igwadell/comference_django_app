@@ -1,0 +1,76 @@
+<!-- events/event_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Details - {{ event.title }}</title>
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .event-details {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .event-details h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .event-details p {
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .event-details .schedule-list {
+            margin-top: 20px;
+        }
+        .event-details .schedule-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .event-details .schedule-list th,
+        .event-details .schedule-list td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        .event-details .schedule-list th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Details - {{ event.title }}</h1>
+    <div class="event-details">
+        <h2>{{ event.title }}</h2>
+        <p>Date: {{ event.start_date }} - {{ event.end_date }}</p>
+        <p>Location: {{ event.location }}</p>
+        <p>Description: {{ event.description }}</p>
+        <div class="schedule-list">
+            <h3>Schedule:</h3>
+            <table>
+                <tr>
+                    <th>Time Slot</th>
+                    <th>Session Duration</th>
+                    <th>Speaker</th>
+                </tr>
+                {% for schedule in event.schedules.all %}
+                    <tr>
+                        <td>{{ schedule.time_slot }}</td>
+                        <td>{{ schedule.session_duration }}</td>
+                        <td>{{ schedule.speaker.name }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

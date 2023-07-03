@@ -1,0 +1,68 @@
+<!-- events/speaker_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speaker Details</title>
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .speaker-details {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .speaker-details h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .speaker-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .speaker-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .speaker-info {
+            margin-bottom: 20px;
+        }
+        .speaker-info p {
+            margin: 0;
+        }
+        .speaker-bio {
+            color: #777;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speaker Details</h1>
+    <div class="speaker-details">
+        <div class="speaker-image">
+            <img src="{{ speaker.image.url }}" alt="{{ speaker.name }}">
+        </div>
+        <h2>{{ speaker.name }}</h2>
+        <div class="speaker-info">
+            <p><strong>Email:</strong> {{ speaker.email }}</p>
+            <p><strong>Company:</strong> {{ speaker.company }}</p>
+            <p><strong>Position:</strong> {{ speaker.position }}</p>
+        </div>
+        <h3>Bio</h3>
+        <p class="speaker-bio">{{ speaker.bio }}</p>
+    </div>
+</body>
+</html>

@@ -18,13 +18,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from core import views
-import speakers
 
 urlpatterns = [
-    # www.conference.rw/admin/
+    # Add more URL patterns for other queries
+
     path("admin/", admin.site.urls),
     path("speakers/", include("speakers.urls")),
+    path("events/", include("events.urls")),
     path("", include("core.urls")),
-
-] 
+]
